@@ -1,0 +1,10 @@
+theme: minima
+title: MangAlly Pop Art
+description: Site de présentation de l'association photographique « MangAlly Pop Art ».
+timezone: Europe/Paris
+
+# Variables globales
+association:
+  name: MangAlly Pop Art Photo Asso
+  short_name: MangAlly Pop Art
+  creation_date: 2023-12-01

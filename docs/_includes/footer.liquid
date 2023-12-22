@@ -1,0 +1,16 @@
+<footer class="site-footer h-card">
+    <div class="wrapper">
+        <div class="copyright">
+            {% comment %} <!-- Copyright --> {% endcomment %}
+            {% assign current_year = 'today' | date: "%Y" | plus: 0 %}
+            {% assign creation_year = site.association.creation_date | date: "%Y" | plus: 0 %}
+            <div>
+                ©️ {{ creation_year }}
+                {%- if current_year > creation_year -%}
+                    -{{ current_year }}
+                {%- endif -%}
+                &nbsp;{{ site.association.name }}. Tous droits réservés.
+            </div>
+        </div>
+    </div>
+</footer>
