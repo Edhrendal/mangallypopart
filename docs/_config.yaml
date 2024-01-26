@@ -6,5 +6,8 @@ timezone: Europe/Paris
 # Variables globales
 association:
   name: MangAlly Pop Art Photo Asso
+  multiline:
+  - MangAlly Pop Art
+  - Photo Asso
   short_name: MangAlly Pop Art
   creation_date: 2023-12-01

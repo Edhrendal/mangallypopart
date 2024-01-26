@@ -14,6 +14,19 @@ ol li + li {
     color: $color-danger;
 }
 
+// ---------- HEADER
+.site-header {
+  .site-title {
+    .name {
+      color: $color-primary;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.25em;
+      text-align: center;
+    }
+  }
+}
 // ---------- FOOTER
 .footer-col {
   text-align: center;
