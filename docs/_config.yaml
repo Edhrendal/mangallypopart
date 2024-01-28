@@ -11,3 +11,13 @@ association:
   - Photo Asso
   short_name: MangAlly Pop Art
   creation_date: 2023-12-01
+
+defaults:
+  - scope:
+      path: "assets/photos"
+    values:
+      photo: true
+  - scope:
+      path: "assets/photos/carousel"
+    values:
+      carousel: true

@@ -1,0 +1,83 @@
+/***** HOME *****/
+/********** Carousel **********/
+.carousel {
+  .controls {
+    user-select: none;
+
+    .previous,
+    .next {
+      position: absolute;
+      top: 50%;
+
+      background-color: rgba($background-color, .25);
+      cursor: pointer;
+      font-size: 2em;
+      padding: 0.5em;
+      text-shadow: 0 0 2px $color-white;
+
+      transition:
+        background-color 1.5s,
+        color 1s;
+
+      &:hover {
+        background-color: rgba($text-color, .5);
+        color: rgba($color-primary, 0.85);
+      }
+    }
+    .previous {
+      padding-right: 1em;
+    }
+    .next {
+      right: 0;
+
+      padding-left: 1em;
+    }
+  }
+  .content {
+    height: 30rem;
+    width: 100%;
+
+    > div {
+      &.photo {
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    @media screen and (min-width: $on-medium) {
+      height: 35rem;
+    }
+    @media screen and (min-width: $on-large) {
+      height: 40rem;
+    }
+  }
+  .track {
+    position: absolute;
+    bottom: .5em;
+
+    user-select: none;
+    text-align: center;
+    width: 100%;
+
+    .indicator {
+      cursor: pointer;
+      opacity: 50%;
+      text-shadow: 0 0 2px $text-color;
+      transition: opacity 0.75s;
+
+      &:before {
+        content: "⚪";
+      }
+      &:hover {
+        opacity: 80%;
+      }
+      &.active {
+        opacity: unset;
+      }
+      & +.indicator {
+        margin-left: 1em;
+      }
+    }
+  }
+}

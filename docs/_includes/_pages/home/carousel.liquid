@@ -1,0 +1,18 @@
+{% assign photos = site.static_files | where: "carousel", true %}
+
+<div class="carousel">
+    <div class="controls">
+        <div class="previous">◀</div>
+        <div class="next">▶</div>
+    </div>
+    <div class="content">
+        {% for photo in photos %}
+            <span class="photo" data-location="{{ photo.path | relative_url }}"></span>
+        {% endfor %}
+    </div>
+    <div class="track">
+        {% for photo in photos %}
+            <span class="indicator" data-index="{{ forloop.index0 }}"></span>
+        {% endfor %}
+    </div>
+</div>

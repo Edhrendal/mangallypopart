@@ -218,6 +218,13 @@
   padding: $spacing-unit 0;
   flex: 1 0 auto;
 }
+.home-content {
+  flex: 1 0 auto;
+
+  > .wrapper {
+    padding: $spacing-unit 0;
+  }
+}
 
 .page-heading {
   @include relative-font-size(2);
