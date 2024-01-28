@@ -31,6 +31,12 @@ ol li + li {
 .footer-col {
   text-align: center;
 }
+.caption {
+  @include relative-font-size(1.1);
+  color: $color-primary;
+  margin-bottom: $spacing-unit * .5;
+  text-align: center;
+}
 .copyright {
   @include relative-font-size(0.9);
   color: $brand-color;
