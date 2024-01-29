@@ -1,9 +1,46 @@
 /***** HOME *****/
 /********** Carousel **********/
 .carousel {
+  position: relative;
+
+  &:hover {
+    .controls {
+      .auto {
+        > div {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .controls {
     user-select: none;
 
+    .auto {
+      position: absolute;
+      top: 0;
+
+      text-align: center;
+      width: 100%;
+      > div {
+        background-color: rgba($background-color, .25);
+        cursor: pointer;
+        display: inline-block;
+        font-size: 2em;
+        font-weight: 700;
+        opacity: 0;
+        padding: 0.25em 0.75em;
+        transition:
+          background-color 1.5s,
+          color 1s,
+          opacity 1s;
+
+        &:hover {
+          background-color: rgba($text-color, .5);
+          color: rgba($color-primary, 0.85);
+        }
+      }
+    }
     .previous,
     .next {
       position: absolute;

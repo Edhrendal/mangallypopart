@@ -2,6 +2,9 @@
 
 // Carousel
 const carouselContent = document.querySelector(".carousel .content")
+const carouselControlStop = document.querySelector(".carousel .controls .stop")
+const carouselControlPlay = document.querySelector(".carousel .controls .play")
+let hasBeenPaused = false
 const carouselTrackIndicators = document.querySelectorAll(".carousel .track .indicator")
 let autoCarouselTimeout
 // * Get data
@@ -29,6 +32,16 @@ document.querySelector(".carousel .controls .previous").addEventListener("click"
 document.querySelector(".carousel .controls .next").addEventListener("click", _ => (
     changeCarouselPhoto(true)
 ))
+carouselControlStop.addEventListener("click", _ => {
+    window.clearTimeout(autoCarouselTimeout)
+    carouselControlStop.style.display = "none"
+    carouselControlPlay.style.display = null // Remove element style to use stylesheet one
+    hasBeenPaused = true
+})
+carouselControlPlay.addEventListener("click", _ => {
+    hasBeenPaused = false
+    setAutoCarouselTimeout()
+})
 carouselTrackIndicators.forEach(indicatorElement => {
     indicatorElement.addEventListener("click", _ => {
         const thisIndex = Number(indicatorElement.dataset.index)
@@ -43,7 +56,13 @@ carouselTrackIndicators.forEach(indicatorElement => {
 
 // * Functions
 function setAutoCarouselTimeout() {
-    autoCarouselTimeout = window.setTimeout(_ => changeCarouselPhoto(true), 2000)
+    if (hasBeenPaused) {
+        return
+    }
+
+    autoCarouselTimeout = window.setTimeout(_ => changeCarouselPhoto(true), 5000)
+    carouselControlPlay.style.display = "none"
+    carouselControlStop.style.display = null // Remove element style to use stylesheet one
 }
 
 function setCarouselPhoto(index = 0) {
